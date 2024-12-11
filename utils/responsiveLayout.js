@@ -8,7 +8,7 @@ export default function responsiveLayout() {
   const bodyPaddingRight = parseFloat(bodyStyle.paddingRight);
 
   // Calculer l'espace restant sans le padding
-  let availableWidth = screenWidth - (bodyPaddingLeft + bodyPaddingRight) * 2;
+  let availableWidth = screenWidth - (bodyPaddingLeft + bodyPaddingRight) * 1.2;
 
   // Si on est dans le layout Desktop, l'espace libre est réduit pour que le scale se lance plus tôt
   if (screenWidth > 1500) {
