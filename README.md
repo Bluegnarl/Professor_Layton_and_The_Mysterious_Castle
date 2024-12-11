@@ -1,43 +1,36 @@
-# Professor Layton and the Mysterious Castle
+# Professeur Layton et l'Étrange Château
 
-A game inspired by the "Professor Layton" franchise.
+Un jeu inspiré par la licence "Professor Layton"
 
-## Concept of the Franchise
+## Concept de la licence
 
-Professor Layton is a game series filled with simple and complex puzzles to solve, accompanied by an engaging story that is itself a mystery.
+Professor Layton est une licence de jeux remplis d'énigmes simples ou complexes à résoudre accompagnés d'une histoire attractive et qui est en elle-même une énigme.
 
-## Story Summary
+## Résumé de l'histoire
 
-The story takes place in London, where Professor Hershel Layton, along with his young assistant Luke Triton (or Flora Reinhold if the player is female), receives a letter from a duke inviting them to his castle to solve a mystery. Upon their arrival, the duke greets them warmly before disappearing without a trace. The goal is to uncover what is happening in this castle and discover the mystery it holds. 
+Cette histoire se déroule à Londres, le professeur Hershel Layton accompagné de son jeune assistant Luke Triton (ou Flora Reinhold si le joueur est de sexe féminin) reçoit une lettre d'un duc qui les invitent à son château pour résoudre un mystère. À leur arrivée, le duc les accueille comme il se doit avant de disparaître sans laisser de traces. Notre objectif est donc de comprendre ce qui se trame dans ce château et de découvrir le mystère qu'il renferme.
+En explorant les lieux, ils découvrent des indices et résolvent des énigmes qui les mènent à une lettre inachevée du duc. Celle-ci mentionne un "invité indésirable" et laisse entendre que le maître des lieux tente de protéger un trésor familial. Au fil de leur progression, Layton et son assistant rencontrent divers personnages, parmi lesquels un invité en apparence anodin mais dont l’attitude les intrigue.
+Le duc réapparait finalement dans les profondeurs du château. À ses côtés se tient l'invité suspect, qui s'avère être son frère. Les deux hommes expliquent avoir longtemps été en conflit à propos du trésor familial. Cependant, après des discussions et les efforts de Layton pour apaiser les tensions, ils décident de partager l’héritage.
 
-As they explore the castle, they find clues and solve puzzles that lead them to an unfinished letter from the duke. This letter mentions an "undesirable guest" and hints that the master of the house is trying to protect a family treasure. As they progress, Layton and his assistant meet various characters, including one seemingly harmless guest whose behavior intrigues them. 
+⚠️ Cette histoire peut légérement changer au cours de son développement ⚠️
 
-Eventually, the duke reappears in the depths of the castle, accompanied by the suspicious guest, who turns out to be his brother. The two explain that they have long been at odds over the family treasure. However, after discussions and Layton's efforts to ease the tensions, they decide to share the inheritance.
+## Mini-jeu
 
-## Mini-games
+Dans ce jeu, les joueurs auront l'occasion de découvrir non pas un mais plusieurs mini-jeux variés. Tout d'abord, des jeux de devinettes simples, où il faudra simplement cliquer sur le bon élément pour résoudre l'énigme. En plus de ceux-ci, un ou plusieurs mini-jeux plus complexes sont prévus.
 
-In this game, players will have the opportunity to experience not just one, but several varied mini-games. Firstly, there will be simple guessing games, where the player will need to click on the right element to solve the puzzle. Additionally, one or more more complex mini-games are planned.
+### Exemples de mini-jeux plus complexes
 
-## Use of localStorage
+Je précise qu'ils ne seront pas tous implémentés, ce sont simplement des exemples.
 
-The form will allow the player to enter their name and gender. Depending on the choice, the player will either have Luke or Flora as an assistant.
+* Puzzle où il faut reconstituer une image ou des fragments d’un message. (mécanique de drag'n'drop)
+* Jeu de mémoire où le joueur doit trouver les paires d'éléments identiques parmi des cartes retournées aléatoirement.
+* Jeu d'équilibre où le joueur doit équilibrer une balance en déplaçant des poids. (mécanique de drag'n'drop)
+* Jeu où le joueur doit réorganiser une phrase ou un texte pour qu'il ait du sens. (mécanique de drag'n'drop)
+* Jeu où le joueur voit une série de couleurs ou de formes pendant quelques secondes, puis le joueur doit les reproduire en cliquant.
+* Jeu où le joueur doit trier des objets dans des catégories (mécanique de drag'n'drop)
 
-For data storage, I will use localStorage to save the player's progress after significant actions (e.g., completing a mini-game). The player will be able to resume their game from where they left off. For example, progress in the story, collected clues, or the list of completed mini-games will be saved in localStorage.
+## Utilisation de localStorage
 
-### Responsive Design and Layout
+Le formulaire permettra au joueur de saisir son nom et son sexe. Selon le choix, le joueur aura soit Luke, soit Flora.
 
-The game will feature a responsive layout, ensuring it works well across different screen sizes:
-
-- **Flexible Layouts:** The game screens will adjust automatically to the player's device, including mobile and desktop.
-- **Scaling:** When the screen becomes too small, the game will scale to maintain full visibility of the screens, ensuring the primary and secondary screens stay correctly proportioned while adjusting to available space.
-
-### Interactive and Dynamic Elements
-
-The game will include interactive elements that respond to player input:
-
-- **Click Events:** Players will interact with various objects by clicking on them to solve puzzles or uncover clues.
-- **Story Progression:** The narrative will progress dynamically based on puzzle outcomes and decisions made by the player.
-
-## Future Features
-
-As development continues, additional features and mini-games will be added to enhance the gameplay experience, offering more variety in puzzles and interactions.
+Pour le stockage des données, j'utiliserai localStorage pour sauvegarder la progression du joueur à chaque action importante effectuée (exemple : réussite d'un mini-jeu). Le joueur pourra reprendre sa partie là où il l’a laissée. Par exemple, la progression dans l'histoire selon les choix, les indices collectés ou la liste des mini-jeux terminés seront enregistrés dans localStorage.

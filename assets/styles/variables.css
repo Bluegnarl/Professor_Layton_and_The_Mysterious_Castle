@@ -1,3 +1,17 @@
+@font-face {
+    font-family: 'Free Pixel';
+    src: url('../fonts/FreePixel-Regular.woff2') format('woff2'),
+        url('../fonts/FreePixel-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 :root{
-    
+    --primary: #4A3426;
+    --secondary: ;
+    --surface-0: #D0BFA4;
+    --surface-1: radial-gradient(#FFF7E7, #E8E0A5);
+    --surface-2: radial-gradient(#E4C2A0, #A07850);
+    --surface-3: radial-gradient(0% #A07850, 14% #AB7537, 100% #774914);
 }
