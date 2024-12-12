@@ -33,3 +33,4 @@ export default function responsiveLayout() {
 window.addEventListener("load", responsiveLayout);
 window.addEventListener("DOMContentLoaded", responsiveLayout);
 window.addEventListener("resize", responsiveLayout);
+window.addEventListener("orientationchange", responsiveLayout);
