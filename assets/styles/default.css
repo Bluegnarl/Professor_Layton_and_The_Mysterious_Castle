@@ -582,14 +582,14 @@ body {
     gap: 2px;
   }
   .primary-screen .dialogue > div > div {
-    padding: 4px 24px;
+    padding: 6px 24px;
   }
   .primary-screen .dialogue > div > div h3 {
     font-size: 16px;
   }
   .primary-screen .dialogue > div p {
-    height: 70px;
-    padding: 6px 16px;
+    height: 80px;
+    padding: 8px 16px;
     font-size: 15px;
   }
   .primary-screen .inventory {
