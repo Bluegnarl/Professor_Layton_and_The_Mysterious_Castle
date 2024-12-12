@@ -364,7 +364,7 @@ body {
     padding: 8px;
   }
   .primary-screen .inventory > div section {
-    padding-bottom: 8%;
+    padding-bottom: 12%;
   }
   .primary-screen .inventory > div section div {
     display: flex;
@@ -373,10 +373,10 @@ body {
     gap: 16px;
   }
   .primary-screen .inventory > div section div h4 {
-    font-size: 24px;
+    font-size: 36px;
   }
   .primary-screen .inventory > div section div img {
-    width: 50%;
+    width: 60%;
   }
   .primary-screen .inventory > div header {
     display: flex;
@@ -384,14 +384,14 @@ body {
     padding: 5% 7%;
   }
   .primary-screen .inventory > div header div {
-    gap: 12px;
+    gap: 16px;
   }
   .primary-screen .inventory > div header div h5 {
-    font-size: 24px;
+    font-size: 36px;
     text-shadow: 2px 0 var(--on-surface), -2px 0 var(--on-surface), 0 2px var(--on-surface), 0 -2px var(--on-surface), 2px 2px var(--on-surface), -2px -2px var(--on-surface), 2px -2px var(--on-surface), -2px 2px var(--on-surface);
   }
   .primary-screen .inventory > div header div img {
-    width: 15%;
+    width: 18%;
   }
   .logo-screen-wrapper {
     height: auto;

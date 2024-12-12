@@ -409,7 +409,7 @@ body {
 
       & > div {
         & section {
-          padding-bottom: 8%;
+          padding-bottom: 12%;
 
           & div {
             display: flex;
@@ -418,11 +418,11 @@ body {
             gap: 16px;
 
             & h4 {
-              font-size: 24px;
+              font-size: 36px;
             }
 
             & img {
-              width: 50%;
+              width: 60%;
             }
           }
         }
@@ -433,10 +433,10 @@ body {
           padding: 5% 7%;
 
           & div {
-            gap: 12px;
+            gap: 16px;
 
             & h5 {
-              font-size: 24px;
+              font-size: 36px;
               text-shadow: 2px 0 var(--on-surface), -2px 0 var(--on-surface),
                 0 2px var(--on-surface), 0 -2px var(--on-surface),
                 2px 2px var(--on-surface), -2px -2px var(--on-surface),
@@ -444,7 +444,7 @@ body {
             }
 
             & img {
-              width: 15%;
+              width: 18%;
             }
           }
         }

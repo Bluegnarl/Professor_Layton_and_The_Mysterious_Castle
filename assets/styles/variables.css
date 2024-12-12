@@ -19,6 +19,9 @@
 :root {
   --primary: #4a3426;
   --secondary: #301c0f;
+
+  --home: #632B26;
+
   --on-surface: #4a3426;
   --on-surface-variant: #ffffff;
   --surface-0: #d0bfa4;

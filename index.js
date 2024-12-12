@@ -1,15 +1,18 @@
 import responsiveLayout from "./utils/responsiveLayout.js";
-import animatedBackground from "./utils/animatedBackground.js";
 
 const npc = document.querySelectorAll(".npc");
 const inventoryIcon = document.querySelector(".inventory-icon");
 const closeInventory = document.getElementById("close-inventory");
 const moveIcon = document.querySelector(".move-icon");
-const primaryScreen = document.querySelector(".primary-creen");
+const primaryScreen = document.querySelector(".primary-screen");
 const dialogueContainer = document.querySelector(".dialogue");
 const inventory = document.querySelector(".inventory");
 const secondaryScreen = document.querySelector(".secondary-screen");
 const moveArrowContainer = document.querySelector(".move-arrow-container");
+
+if(!sessionStorage.getItem("firstLaunch") || !localStorage.getItem("name")) {
+  location.href = "./pages/home.html";
+}
 
 let action = "";
 
@@ -95,3 +98,4 @@ inventoryIcon.addEventListener("click", () => displayInventory());
 closeInventory.addEventListener("click", () => displayInventory());
 npc[0].addEventListener("click", () => displayDialogue());
 dialogueContainer.addEventListener("click", () => displayDialogue());
+document.getElementById("leave").addEventListener("click", () => location.href = "./pages/home.html");
