@@ -61,9 +61,6 @@ function displayInventory() {
     const sfx = new Audio("./assets/sounds/clickSFX.mp3");
     sfx.play();
     inventory.style.display = "flex";
-    moveArrowContainer.style.display = "none";
-    moveArrowContainer.classList.remove("blinking");
-    moveIcon.classList.remove("blinking");
     document.querySelector(".scene").style.display = "none";
     inventoryToggle = true;
   } else {
@@ -85,7 +82,7 @@ function displayDialogue() {
       document.querySelector(".scene").style.display = "none";
       document.querySelector(".dialogue").style.display = "flex";
       dialogueToggle = true;
-    }, 500);
+    }, 400);
   } else {
     document.querySelector(".scene").style.display = "flex";
     document.querySelector(".dialogue").style.display = "none";

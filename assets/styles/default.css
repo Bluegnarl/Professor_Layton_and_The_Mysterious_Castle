@@ -440,9 +440,6 @@ body {
   .primary-screen .inventory > div header div img {
     width: 18%;
   }
-  .primary-screen .inventory > div header div h5 {
-    font-size: 32px;
-  }
   .logo-screen-wrapper {
     width: -moz-fit-content;
     width: fit-content;
@@ -522,5 +519,124 @@ body {
   }
   .logo-screen-wrapper .secondary-screen p {
     font-size: 16px;
+  }
+}
+@media screen and (max-height: 500px) {
+  body {
+    flex-direction: row;
+    gap: 1.5rem;
+    padding: 40px;
+  }
+  .primary-screen {
+    height: 100%;
+  }
+  .primary-screen .dialogue > div {
+    gap: 4px;
+  }
+  .primary-screen .dialogue > div > div {
+    padding: 8px 36px;
+  }
+  .primary-screen .dialogue > div > div h3 {
+    font-size: 36px;
+  }
+  .primary-screen .dialogue > div p {
+    height: 200px;
+    padding: 24px 36px;
+    font-size: 40px;
+  }
+  .primary-screen .inventory > div section div {
+    gap: 48px;
+  }
+  .primary-screen .inventory > div section div h4 {
+    font-size: 56px;
+  }
+  .primary-screen .inventory > div header div img {
+    width: 16%;
+  }
+  .logo-screen-wrapper {
+    width: auto;
+    min-width: -moz-max-content !important;
+    min-width: max-content !important;
+    min-width: 400px;
+    height: 100%;
+  }
+  .logo-screen-wrapper .logo-container {
+    display: flex;
+  }
+  .logo-screen-wrapper .secondary-screen {
+    height: auto;
+    width: auto;
+  }
+  .logo-screen-wrapper .secondary-screen h3 {
+    padding: 6px 12px;
+    font-size: 20px;
+  }
+  .logo-screen-wrapper .secondary-screen p {
+    padding: 6px 12px;
+    font-size: 20px;
+  }
+  body {
+    align-items: flex-end;
+  }
+  .primary-screen .dialogue > div {
+    gap: 2px;
+  }
+  .primary-screen .dialogue > div > div {
+    padding: 4px 24px;
+  }
+  .primary-screen .dialogue > div > div h3 {
+    font-size: 16px;
+  }
+  .primary-screen .dialogue > div p {
+    height: 70px;
+    padding: 6px 16px;
+    font-size: 15px;
+  }
+  .primary-screen .inventory {
+    padding: 8px;
+  }
+  .primary-screen .inventory > div section {
+    padding-bottom: 8%;
+  }
+  .primary-screen .inventory > div section div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  .primary-screen .inventory > div section div h4 {
+    font-size: 16px;
+  }
+  .primary-screen .inventory > div section div img {
+    width: 50%;
+  }
+  .primary-screen .inventory > div header {
+    display: flex;
+    justify-content: space-between;
+    padding: 5% 7%;
+  }
+  .primary-screen .inventory > div header div {
+    gap: 12px;
+  }
+  .primary-screen .inventory > div header div h5 {
+    font-size: 16px;
+    text-shadow: 2px 0 var(--on-surface), -2px 0 var(--on-surface), 0 2px var(--on-surface), 0 -2px var(--on-surface), 2px 2px var(--on-surface), -2px -2px var(--on-surface), 2px -2px var(--on-surface), -2px 2px var(--on-surface);
+  }
+  .primary-screen .inventory > div header div img {
+    width: 15%;
+  }
+  .logo-screen-wrapper {
+    height: auto;
+    max-height: 100vh;
+  }
+  .logo-screen-wrapper .logo-container {
+    display: none;
+  }
+  .logo-screen-wrapper .secondary-screen {
+    width: auto;
+    height: 100%;
+    max-width: calc(133.3333333333vh - 108px);
+    max-height: 100vh;
+    aspect-ratio: 4/3;
   }
 }/*# sourceMappingURL=default.css.map */

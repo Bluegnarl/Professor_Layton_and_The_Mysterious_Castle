@@ -1,6 +1,7 @@
 export default function responsiveLayout() {
   // Ajuster le scale du body pour que le jeu fasse 100% de la largeur sur mobile
   const screenWidth = window.innerWidth;
+  const screenHeight = window.innerHeight;
 
   // Récupérer le padding du body
   const bodyStyle = getComputedStyle(document.body);
@@ -13,6 +14,9 @@ export default function responsiveLayout() {
   // Si on est dans le layout Desktop, l'espace libre est réduit pour que le scale se lance plus tôt
   if (screenWidth > 1500) {
     availableWidth = screenWidth - (bodyPaddingLeft + bodyPaddingRight) * 6;
+  }
+  if (screenHeight < 500) {
+    availableWidth = screenWidth - (bodyPaddingLeft + bodyPaddingRight) * 4;
   }
 
   const primaryScreenWidth =
