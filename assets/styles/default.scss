@@ -25,32 +25,236 @@ body {
   aspect-ratio: 4/3;
   position: relative;
   background: url("../img/05-forest.png") center/cover no-repeat;
-  border: solid 3px #4a3426;
+  border: solid 3px var(--primary);
+  cursor: url("../img/cursor-hand.png"), auto;
 
-  & .inventory-icon {
-    width: 8%;
-    object-fit: contain;
-    position: absolute;
-    top: 5%;
-    right: 5%;
-    cursor: pointer;
-  }
-  & .move-icon {
-    width: 8%;
-    object-fit: contain;
-    position: absolute;
-    bottom: 5%;
-    right: 5%;
-    cursor: pointer;
+  & * {
+    user-select: none;
   }
 
-  & .npc {
-    width: 15%;
-    position: absolute;
-    left: 55%;
-    bottom: 10%;
-    cursor: pointer;
+  & section {
+    & .inventory-icon {
+      width: 8%;
+      object-fit: contain;
+      position: absolute;
+      top: 5%;
+      right: 5%;
+      -webkit-user-drag: none;
+      -moz-user-drag: none;
+      -o-user-drag: none;
+    }
+    & .move-icon {
+      width: 8%;
+      object-fit: contain;
+      position: absolute;
+      bottom: 5%;
+      right: 5%;
+      -webkit-user-drag: none;
+      -moz-user-drag: none;
+      -o-user-drag: none;
+    }
+
+    & .npc {
+      width: 15%;
+      position: absolute;
+      left: 55%;
+      bottom: 14%;
+      -webkit-user-drag: none;
+      -moz-user-drag: none;
+      -o-user-drag: none;
+      transition: filter 0.5s ease;
+    }
+
+    & .move-arrow-container {
+      display: none;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+
+      & .move-arrow {
+        width: 7%;
+        height: fit-content;
+        position: absolute;
+        left: 35%;
+        bottom: 32%;
+        -webkit-user-drag: none;
+        -moz-user-drag: none;
+        -o-user-drag: none;
+      }
+    }
   }
+
+  & .dialogue {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    align-items: flex-end;
+    padding: 8px;
+    background: #00000080;
+
+    & > div {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      gap: 4px;
+      position: relative;
+
+      & img {
+        position: absolute;
+        width: 30%;
+        left: 2%;
+        bottom: 75%;
+        z-index: 0;
+      }
+
+      & > div {
+        margin: 0 24px 0 24px;
+        background: var(--linear-green);
+        width: fit-content;
+        padding: 4px 36px;
+        border-radius: 4px;
+        border: solid 2px var(--on-surface-variant);
+        z-index: 50;
+
+        & h3 {
+          width: fit-content;
+          color: var(--on-surface-variant);
+          font-size: 36px;
+          font-weight: 100;
+          font-family: "Sonic Mania", sans-serif;
+          text-shadow: 2px 0 var(--on-surface), -2px 0 var(--on-surface),
+            0 2px var(--on-surface), 0 -2px var(--on-surface),
+            2px 2px var(--on-surface), -2px -2px var(--on-surface),
+            2px -2px var(--on-surface), -2px 2px var(--on-surface);
+        }
+      }
+      & p {
+        width: 100%;
+        height: 200px;
+        padding: 24px 36px;
+        color: var(--on-surface);
+        border: solid 2px var(--primary);
+        border-radius: 32px;
+        font-family: "Free Pixel", sans-serif;
+        font-size: 40px;
+        background: var(--surface-1);
+        z-index: 50;
+      }
+    }
+  }
+
+  & .inventory {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--surface-2);
+    padding: 16px;
+    scale: 1.01;
+
+    & > div {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      height: 100%;
+      background: url("../img/noise.png"), var(--surface-3);
+      border: solid 3px var(--secondary);
+
+      & section {
+        display: flex;
+        align-items: flex-end;
+        padding-bottom: 10%;
+
+        & div {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 48px;
+
+          & h4 {
+            width: fit-content;
+            color: var(--on-surface-variant);
+            font-size: 56px;
+            font-weight: 100;
+            font-family: "Sonic Mania", sans-serif;
+            text-shadow: 2.5px 0 var(--on-surface), -2.5px 0 var(--on-surface),
+              0 2.5px var(--on-surface), 0 -2.5px var(--on-surface),
+              2.5px 2.5px var(--on-surface), -2.5px -2.5px var(--on-surface),
+              2.5px -2.5px var(--on-surface), -2.5px 2.5px var(--on-surface);
+          }
+
+          & img {
+            width: 55%;
+          }
+        }
+      }
+
+      & header {
+        display: flex;
+        justify-content: space-between;
+        padding: 24px 48px;
+        background: url("../img/noise.png"), var(--surface-3);
+        border-bottom: solid 3px var(--secondary);
+
+        & div:nth-of-type(2) {
+          justify-content: flex-end;
+        }
+
+        & div {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          width: 50%;
+
+          & h5 {
+            width: fit-content;
+            color: var(--on-surface-variant);
+            font-size: 40px;
+            font-weight: 100;
+            font-family: "Sonic Mania", sans-serif;
+            text-shadow: 2.5px 0 var(--on-surface), -2.5px 0 var(--on-surface),
+              0 2.5px var(--on-surface), 0 -2.5px var(--on-surface),
+              2.5px 2.5px var(--on-surface), -2.5px -2.5px var(--on-surface),
+              2.5px -2.5px var(--on-surface), -2.5px 2.5px var(--on-surface);
+          }
+
+          & img {
+            width: 16%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes glow {
+  0% {
+    filter: drop-shadow(0px 0px 0px #cdcdcd);
+  }
+  50% {
+    filter: drop-shadow(0px 0px 8px #cdcdcd);
+  }
+  100% {
+    filter: drop-shadow(0px 0px 0px #cdcdcd);
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.blinking {
+  animation: blink 1s linear infinite;
 }
 
 .secondary-screen {
@@ -62,35 +266,94 @@ body {
   aspect-ratio: 4/3;
   background: url("../img/secondary-screen-background.png") center/cover
     no-repeat;
-  border: solid 3px #4a3426;
+  border: solid 3px var(--primary);
   padding: 8px;
   position: relative;
+
+  &.puzzle {
+    background-image: url("../img/secondary-screen-riddle-background.png");
+    border: none;
+    padding: 0;
+    justify-content: flex-start;
+
+    & header {
+      display: flex;
+      width: 100%;
+      background: var(--surface-0);
+      padding: 4px;
+      scale: 1.01;
+
+      & div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 16px 6px 16px;
+        border: solid 2px var(--on-surface-variant);
+        width: 100%;
+
+        & h4 {
+          display: block;
+        }
+      }
+    }
+
+    & section {
+      padding: 16px 20px;
+      display: block;
+
+      & p {
+        font-family: "Free Pixel", sans-serif;
+        font-size: 24px;
+        color: var(--on-surface);
+      }
+    }
+
+    & h3 {
+      display: none;
+    }
+
+    & > p {
+      display: none;
+    }
+  }
 
   & h3 {
     width: fit-content;
     padding: 6px 12px;
-    color: #4a3426;
-    border: solid 2px #4a3426;
+    color: var(--on-surface);
+    border: solid 2px var(--primary);
     border-radius: 4px;
-    font-family: sans-serif;
     font-size: 20px;
     font-weight: 500;
-    background: radial-gradient(#fff7e7, #e8e0a5);
+    background: var(--surface-1);
     position: absolute;
     top: -6px;
     right: -6px;
     font-family: "Free Pixel", sans-serif;
   }
 
-  & p {
+  & h4 {
+    display: none;
+    width: fit-content;
+    color: var(--on-surface);
+    font-size: 24px;
+    font-family: "Sonic Mania", sans-serif;
+    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff;
+  }
+
+  & > p {
     width: 100%;
     padding: 6px 12px;
-    color: #4a3426;
-    border: solid 2px #4a3426;
+    color: var(--on-surface);
+    border: solid 2px var(--primary);
     border-radius: 4px;
     font-family: "Free Pixel", sans-serif;
     font-size: 20px;
-    background: radial-gradient(#fff7e7, #e8e0a5);
+    background: var(--surface-1);
+  }
+
+  & section {
+    display: none;
   }
 }
 
@@ -121,6 +384,74 @@ body {
     align-items: flex-end;
   }
 
+  .primary-screen {
+    & .dialogue {
+      & > div {
+        gap: 2px;
+
+        & > div {
+          padding: 4px 24px;
+
+          & h3 {
+            font-size: 24px;
+          }
+        }
+        & p {
+          height: 135px;
+          padding: 16px 28px;
+          font-size: 24px;
+        }
+      }
+    }
+
+    & .inventory {
+      padding: 8px;
+
+      & > div {
+        & section {
+          padding-bottom: 8%;
+
+          & div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+
+            & h4 {
+              font-size: 24px;
+            }
+
+            & img {
+              width: 50%;
+            }
+          }
+        }
+
+        & header {
+          display: flex;
+          justify-content: space-between;
+          padding: 5% 7%;
+
+          & div {
+            gap: 12px;
+
+            & h5 {
+              font-size: 24px;
+              text-shadow: 2px 0 var(--on-surface), -2px 0 var(--on-surface),
+                0 2px var(--on-surface), 0 -2px var(--on-surface),
+                2px 2px var(--on-surface), -2px -2px var(--on-surface),
+                2px -2px var(--on-surface), -2px 2px var(--on-surface);
+            }
+
+            & img {
+              width: 15%;
+            }
+          }
+        }
+      }
+    }
+  }
+
   .logo-screen-wrapper {
     height: auto;
     max-height: 100vh;
@@ -130,9 +461,7 @@ body {
     & .secondary-screen {
       width: auto;
       height: 100%;
-      max-width: calc(
-        100vh * (4 / 3) - 108px
-      ); /* Calcule la largeur maximale selon le ratio */
+      max-width: calc(100vh * (4 / 3) - 108px);
       max-height: 100vh;
       aspect-ratio: 4 / 3;
     }
@@ -148,6 +477,50 @@ body {
 
   .primary-screen {
     height: 50%;
+
+    & .dialogue {
+      & > div {
+        gap: 2px;
+
+        & > div {
+          padding: 4px 24px;
+
+          & h3 {
+            font-size: 24px;
+          }
+        }
+        & p {
+          height: 135px;
+          padding: 16px 28px;
+          font-size: 28px;
+        }
+      }
+    }
+
+    & .inventory {
+      & > div {
+        & section {
+          & div {
+            gap: 16px;
+            & h4 {
+              font-size: 32px;
+            }
+          }
+        }
+
+        & header {
+          & div {
+            & img {
+              width: 18%;
+            }
+
+            & h5 {
+              font-size: 32px;
+            }
+          }
+        }
+      }
+    }
   }
 
   .logo-screen-wrapper {
@@ -160,6 +533,102 @@ body {
     & .secondary-screen {
       height: 100%;
       width: fit-content;
+
+      & h3 {
+        padding: 6px 16px;
+        font-size: 28px;
+      }
+
+      & p {
+        padding: 6px 16px;
+        font-size: 24px;
+      }
+    }
+  }
+
+  @media screen and (max-height: 800px) {
+    .primary-screen {
+      & .dialogue {
+        & > div {
+          gap: 2px;
+
+          & > div {
+            padding: 2px 16px;
+
+            & h3 {
+              font-size: 16px;
+              text-shadow: 1px 0 var(--on-surface), -1px 0 var(--on-surface),
+                0 1px var(--on-surface), 0 -1px var(--on-surface),
+                1px 1px var(--on-surface), -1px -1px var(--on-surface),
+                1px -1px var(--on-surface), -1px 1px var(--on-surface);
+            }
+          }
+          & p {
+            height: 85px;
+            padding: 12px 16px;
+            font-size: 16px;
+            border-radius: 16px;
+          }
+        }
+      }
+
+      & .inventory {
+        padding: 8px;
+
+        & > div {
+          & section {
+            padding-bottom: 8%;
+
+            & div {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              gap: 16px;
+
+              & h4 {
+                font-size: 24px;
+              }
+
+              & img {
+                width: 50%;
+              }
+            }
+          }
+
+          & header {
+            display: flex;
+            justify-content: space-between;
+            padding: 5% 7%;
+
+            & div {
+              gap: 12px;
+
+              & h5 {
+                font-size: 24px;
+                text-shadow: 2px 0 var(--on-surface), -2px 0 var(--on-surface),
+                  0 2px var(--on-surface), 0 -2px var(--on-surface),
+                  2px 2px var(--on-surface), -2px -2px var(--on-surface),
+                  2px -2px var(--on-surface), -2px 2px var(--on-surface);
+              }
+
+              & img {
+                width: 15%;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .logo-screen-wrapper {
+      & .secondary-screen {
+        & h3 {
+          font-size: 20px;
+        }
+        & p {
+          font-size: 16px;
+        }
+      }
     }
   }
 }

@@ -1,17 +1,31 @@
 @font-face {
-    font-family: 'Free Pixel';
-    src: url('../fonts/FreePixel-Regular.woff2') format('woff2'),
-        url('../fonts/FreePixel-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Free Pixel";
+  src: url("../fonts/FreePixel-Regular.woff2") format("woff2"),
+    url("../fonts/FreePixel-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
-:root{
-    --primary: #4A3426;
-    --secondary: ;
-    --surface-0: #D0BFA4;
-    --surface-1: radial-gradient(#FFF7E7, #E8E0A5);
-    --surface-2: radial-gradient(#E4C2A0, #A07850);
-    --surface-3: radial-gradient(0% #A07850, 14% #AB7537, 100% #774914);
+@font-face {
+  font-family: "Sonic Mania";
+  src: url("../fonts/Sonic_Mania_Leaderboard.woff2") format("woff2"),
+    url("../fonts/Sonic_Mania_Leaderboard.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --primary: #4a3426;
+  --secondary: #301c0f;
+  --on-surface: #4a3426;
+  --on-surface-variant: #ffffff;
+  --surface-0: #d0bfa4;
+  --surface-1: radial-gradient(#fff7e7, #e8e0a5);
+  --surface-2: radial-gradient(#e4c2a0, #a07850);
+  --surface-3: radial-gradient(#ab7537 14%, #42280b 80%, #31200c 100%);;
+  
+  --linear-pink: linear-gradient(90deg, #E34CA7, #E48AB6);
+  --linear-green: linear-gradient(90deg, #BBE34C, #A2BE56);
 }
