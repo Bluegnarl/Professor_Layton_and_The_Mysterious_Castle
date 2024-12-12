@@ -440,6 +440,9 @@ body {
   .primary-screen .inventory > div header div img {
     width: 18%;
   }
+  .primary-screen .inventory > div header div h5 {
+    font-size: 32px;
+  }
   .logo-screen-wrapper {
     width: -moz-fit-content;
     width: fit-content;
