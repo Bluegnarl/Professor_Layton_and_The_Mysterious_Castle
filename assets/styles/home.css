@@ -135,18 +135,18 @@ section > h2 {
 
 @media screen and (max-height: 600px) {
   main {
-    gap: 15%;
+    gap: 12%;
   }
   main > img {
     width: 300px;
   }
 
   article {
-    gap: 16px;
+    gap: 12px;
   }
 
   section > h2 {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   section > img {
