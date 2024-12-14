@@ -16,6 +16,8 @@ body {
   padding: 40px;
   overflow: hidden;
   background: radial-gradient(circle, #44324f 0%, #26131d 60%, #140a0f 100%);
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
 
 .primary-screen {
@@ -206,6 +208,86 @@ body {
 .primary-screen .inventory > div header div img {
   width: 16%;
 }
+.primary-screen .notebook-and-book {
+  display: none;
+  background: url("../img/secondary-screen-riddle-background.png") no-repeat center/cover;
+  border: none;
+  padding: 0;
+  justify-content: flex-start;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.primary-screen .notebook-and-book > div {
+  display: none;
+  flex-direction: column;
+  height: 100%;
+}
+.primary-screen .notebook-and-book > div header {
+  display: flex;
+  width: 100%;
+  background: var(--surface-0);
+  padding: 8px;
+  scale: 1.01;
+}
+.primary-screen .notebook-and-book > div header div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 32px 10px 32px;
+  border: solid 2px var(--on-surface-variant);
+  width: 100%;
+  position: relative;
+}
+.primary-screen .notebook-and-book > div header div img {
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  scale: 1.06;
+}
+.primary-screen .notebook-and-book > div section {
+  padding: 32px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+.primary-screen .notebook-and-book > div section::-webkit-scrollbar {
+  width: 0;
+}
+.primary-screen .notebook-and-book > div section > div {
+  display: flex;
+  gap: 16px;
+}
+.primary-screen .notebook-and-book > div section > div > div {
+  display: flex;
+  height: -moz-fit-content;
+  height: fit-content;
+  gap: 16px;
+  padding: 4px;
+  background-color: var(--surface-0);
+}
+.primary-screen .notebook-and-book > div section > div h4 {
+  padding: 7px 10px 4px 10px;
+  border: solid 2px var(--on-surface-variant);
+  width: 88px;
+  text-align: center;
+}
+.primary-screen .notebook-and-book > div section p {
+  font-family: "Free Pixel", sans-serif;
+  font-size: 36px;
+  color: var(--on-surface);
+}
+.primary-screen .notebook-and-book > div h4 {
+  width: -moz-fit-content;
+  width: fit-content;
+  color: var(--on-surface);
+  font-size: 40px;
+  font-family: "Sonic Mania", sans-serif;
+  text-shadow: 3px 0 #fff, -3px 0 #fff, 0 3px #fff, 0 -3px #fff;
+}
 
 @keyframes glow {
   0% {
@@ -349,13 +431,11 @@ body {
   .primary-screen .dialogue > div {
     gap: 2px;
   }
-  .primary-screen .dialogue > div > div {
-    padding: 4px 24px;
-  }
   .primary-screen .dialogue > div > div h3 {
     font-size: 24px;
   }
   .primary-screen .dialogue > div p {
+    border-radius: 16px;
     height: 135px;
     padding: 16px 28px;
     font-size: 24px;
@@ -364,7 +444,7 @@ body {
     padding: 8px;
   }
   .primary-screen .inventory > div section {
-    padding-bottom: 12%;
+    padding-bottom: 10%;
   }
   .primary-screen .inventory > div section div {
     display: flex;
@@ -381,7 +461,7 @@ body {
   .primary-screen .inventory > div header {
     display: flex;
     justify-content: space-between;
-    padding: 5% 7%;
+    padding: 3.5% 6%;
   }
   .primary-screen .inventory > div header div {
     gap: 16px;
@@ -392,6 +472,26 @@ body {
   }
   .primary-screen .inventory > div header div img {
     width: 18%;
+  }
+  .primary-screen .notebook-and-book > div header {
+    padding: 4px;
+    scale: 1.01;
+  }
+  .primary-screen .notebook-and-book > div header div {
+    padding: 12px 24px 10px 24px;
+  }
+  .primary-screen .notebook-and-book > div section {
+    padding: 16px 24px;
+  }
+  .primary-screen .notebook-and-book > div section > div h4 {
+    width: 70px;
+  }
+  .primary-screen .notebook-and-book > div section p {
+    font-size: 24px;
+  }
+  .primary-screen .notebook-and-book > div h4 {
+    font-size: 32px;
+    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff;
   }
   .logo-screen-wrapper {
     height: auto;
@@ -442,6 +542,26 @@ body {
   }
   .primary-screen .inventory > div header div h5 {
     font-size: 32px;
+  }
+  .primary-screen .notebook-and-book > div header {
+    padding: 4px;
+    scale: 1.01;
+  }
+  .primary-screen .notebook-and-book > div header div {
+    padding: 8px 16px 6px 16px;
+  }
+  .primary-screen .notebook-and-book > div section {
+    padding: 16px 20px;
+  }
+  .primary-screen .notebook-and-book > div section > div h4 {
+    width: 58px;
+  }
+  .primary-screen .notebook-and-book > div section p {
+    font-size: 20px;
+  }
+  .primary-screen .notebook-and-book > div h4 {
+    font-size: 24px;
+    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff;
   }
   .logo-screen-wrapper {
     width: -moz-fit-content;
@@ -517,6 +637,22 @@ body {
   .primary-screen .inventory > div header div img {
     width: 15%;
   }
+  .primary-screen .notebook-and-book > div header {
+    padding: 4px;
+    scale: 1.01;
+  }
+  .primary-screen .notebook-and-book > div header div {
+    padding: 8px 16px 6px 16px;
+  }
+  .primary-screen .notebook-and-book > div section {
+    padding: 16px 20px;
+  }
+  .primary-screen .notebook-and-book > div section p {
+    font-size: 20px;
+  }
+  .primary-screen .notebook-and-book > div h4 {
+    font-size: 24px;
+  }
   .logo-screen-wrapper .secondary-screen h3 {
     font-size: 20px;
   }
@@ -527,6 +663,7 @@ body {
 @media screen and (max-height: 500px) {
   body {
     flex-direction: row;
+    align-items: flex-end;
     gap: 1.5rem;
     padding: 40px;
   }
@@ -534,58 +671,10 @@ body {
     height: 100%;
   }
   .primary-screen .dialogue > div {
-    gap: 4px;
-  }
-  .primary-screen .dialogue > div > div {
-    padding: 8px 36px;
-  }
-  .primary-screen .dialogue > div > div h3 {
-    font-size: 36px;
-  }
-  .primary-screen .dialogue > div p {
-    height: 200px;
-    padding: 24px 36px;
-    font-size: 40px;
-  }
-  .primary-screen .inventory > div section div {
-    gap: 48px;
-  }
-  .primary-screen .inventory > div section div h4 {
-    font-size: 56px;
-  }
-  .primary-screen .inventory > div header div img {
-    width: 16%;
-  }
-  .logo-screen-wrapper {
-    width: auto;
-    min-width: -moz-max-content !important;
-    min-width: max-content !important;
-    min-width: 400px;
-    height: 100%;
-  }
-  .logo-screen-wrapper .logo-container {
-    display: flex;
-  }
-  .logo-screen-wrapper .secondary-screen {
-    height: auto;
-    width: auto;
-  }
-  .logo-screen-wrapper .secondary-screen h3 {
-    padding: 6px 12px;
-    font-size: 20px;
-  }
-  .logo-screen-wrapper .secondary-screen p {
-    padding: 6px 12px;
-    font-size: 20px;
-  }
-  body {
-    align-items: flex-end;
-  }
-  .primary-screen .dialogue > div {
     gap: 2px;
   }
   .primary-screen .dialogue > div > div {
-    padding: 6px 24px;
+    padding: 4px 16px;
   }
   .primary-screen .dialogue > div > div h3 {
     font-size: 16px;
@@ -608,7 +697,7 @@ body {
     gap: 16px;
   }
   .primary-screen .inventory > div section div h4 {
-    font-size: 16px;
+    font-size: 24px;
   }
   .primary-screen .inventory > div section div img {
     width: 50%;
@@ -622,18 +711,29 @@ body {
     gap: 12px;
   }
   .primary-screen .inventory > div header div h5 {
-    font-size: 16px;
+    font-size: 24px;
     text-shadow: 2px 0 var(--on-surface), -2px 0 var(--on-surface), 0 2px var(--on-surface), 0 -2px var(--on-surface), 2px 2px var(--on-surface), -2px -2px var(--on-surface), 2px -2px var(--on-surface), -2px 2px var(--on-surface);
   }
   .primary-screen .inventory > div header div img {
-    width: 15%;
+    width: 18%;
+  }
+  .primary-screen .notebook-and-book > div section > div h4 {
+    width: 58px;
+  }
+  .primary-screen .notebook-and-book > div section p {
+    font-size: 20px;
+  }
+  .primary-screen .notebook-and-book > div h4 {
+    font-size: 24px;
   }
   .logo-screen-wrapper {
+    width: auto;
+    min-width: -moz-max-content !important;
+    min-width: max-content !important;
+    min-width: 400px;
+    height: 100%;
     height: auto;
     max-height: 100vh;
-  }
-  .logo-screen-wrapper .logo-container {
-    display: none;
   }
   .logo-screen-wrapper .secondary-screen {
     width: auto;
@@ -641,5 +741,13 @@ body {
     max-width: calc(133.3333333333vh - 108px);
     max-height: 100vh;
     aspect-ratio: 4/3;
+  }
+  .logo-screen-wrapper .secondary-screen h3 {
+    padding: 4px 8px;
+    font-size: 18px;
+  }
+  .logo-screen-wrapper .secondary-screen p {
+    padding: 4px 8px;
+    font-size: 16px;
   }
 }/*# sourceMappingURL=default.css.map */

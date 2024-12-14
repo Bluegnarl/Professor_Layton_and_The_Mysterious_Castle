@@ -1,155 +1,299 @@
 @import "./variables.css";
 
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 body {
-  width: 100vw;
-  height: 100vh;
-  gap: 128px;
-  background-color: #000;
-  overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    gap: 128px;
+    background-color: #000;
+    overflow: hidden;
+}
+
+body:hover {
+    cursor: pointer;
 }
 
 main {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 12%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12%;
 }
 
 main > img {
-  width: 500px;
-  height: fit-content;
-  filter: drop-shadow(0 0 4px #23140c);
+    width: 500px;
+    height: fit-content;
+    filter: drop-shadow(0 0 4px #23140c);
 }
 
 article {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    position: relative;
+}
+
+article > h2 {
+    text-shadow: none;
+    position: absolute;
+    width: max-content;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity .5s ease-in-out;
 }
 
 section {
-  display: flex;
-  gap: 12px;
-  filter: drop-shadow(4px 4px 0 #1a1a1aac);
-  transition: filter 0.1s ease;
+    display: flex;
+    gap: 12px;
+    filter: drop-shadow(4px 4px 0 #1a1a1aac);
+    transition: filter 0.1s ease, opacity .5s ease-in-out .5s;
+    opacity: 0;
+    pointer-events: none;
 }
 
 section:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 section:hover h2 {
-  text-shadow: 4px 0 var(--primary), -4px 0 var(--primary), 0 4px var(--primary),
-    0 -4px var(--primary), 4px 4px var(--primary), -4px -4px var(--primary),
-    4px -4px var(--primary), -4px 4px var(--primary);
+    text-shadow: 4px 0 var(--primary), -4px 0 var(--primary),
+        0 4px var(--primary), 0 -4px var(--primary), 4px 4px var(--primary),
+        -4px -4px var(--primary), 4px -4px var(--primary),
+        -4px 4px var(--primary);
 }
 
 section:active {
-  filter: drop-shadow(0px 0px 0 #1a1a1a);
+    filter: drop-shadow(0px 0px 0 #1a1a1a);
 }
 
 section > img {
-  width: 28px;
-  height: fit-content;
+    width: 28px;
+    height: fit-content;
 }
 
-section > h2 {
-  font-family: "Sonic Mania", sans-serif;
-  font-size: 32px;
-  color: white;
-  font-weight: 100;
-  text-shadow: 4px 0 var(--home), -4px 0 var(--home), 0 4px var(--home),
-    0 -4px var(--home), 4px 4px var(--home), -4px -4px var(--home),
-    4px -4px var(--home), -4px 4px var(--home);
-  transition: text-shadow 0.1s ease;
+h2 {
+    font-family: "Sonic Mania", sans-serif;
+    font-size: 32px;
+    color: white;
+    font-weight: 100;
+    text-shadow: 4px 0 var(--home), -4px 0 var(--home), 0 4px var(--home),
+        0 -4px var(--home), 4px 4px var(--home), -4px -4px var(--home),
+        4px -4px var(--home), -4px 4px var(--home);
+    transition: text-shadow 0.1s ease;
+    user-select: none;
 }
 
 .parallax-container {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
-  z-index: -10;
-  overflow: hidden;
-  opacity: 0.5;
-  transition: opacity 1s ease-out;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    z-index: -10;
+    overflow: hidden;
+    opacity: 0.5;
+    transition: opacity 1s ease-out;
 }
 
 .parallax {
-  display: flex;
-  width: 115%;
-  height: 120vh;
-  flex-shrink: 0;
-  background: url("../img/background.png") no-repeat center/cover;
-  object-fit: cover;
+    display: flex;
+    width: 115%;
+    height: 120vh;
+    flex-shrink: 0;
+    background: url("../img/background.png") no-repeat center/cover;
+    object-fit: cover;
+}
+
+#mute {
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    width: 48px;
+}
+#mute:hover {
+    cursor: pointer;
+}
+
+#modale-background {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: #00000050;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease-out;
+}
+
+.modale {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: solid 3px var(--secondary);
+    border-radius: 8px;
+    padding: 48px 64px;
+    background: var(--surface-1);
+    gap: 24px;
+    max-width: 90vw;
+    transition: transform 0.25s ease-in-out;
+    transform: translate(-50%, 200%) scale(0.9);
+}
+
+h4 {
+    font-family: "Sonic Mania", sans-serif;
+    font-size: 32px;
+    font-weight: 100;
+}
+
+.modale > h4 {
+    color: var(--secondary);
+}
+
+.modale > div {
+    border: solid 3px var(--secondary);
+    border-radius: 10px;
+}
+
+.modale > div > div {
+    border: solid 3px var(--on-surface-variant);
+    border-radius: 8px;
+    padding: 6px;
+    background: var(--home);
+}
+
+input {
+    outline: none;
+    border: none;
+    padding: 4px 16px;
+    border-radius: 8px;
+    font-family: "Sonic Mania", sans-serif;
+    font-size: 32px;
+    font-weight: 100;
+    color: var(--secondary);
+    max-width: 70vw;
+}
+
+button {
+    border-radius: 8px;
+    border: solid 3px var(--secondary);
+    background: #722f29;
+    padding: 2px 24px;
+    transition: background 0.2s ease-in-out;
+}
+button:hover {
+    cursor: pointer;
+    background: var(--home);
+}
+button:active {
+    background: #4e211c;
+}
+
+button h4 {
+    color: var(--on-surface-variant);
+    text-shadow: 2px 0 var(--secondary), -2px 0 var(--secondary),
+        0 2px var(--secondary), 0 -2px var(--secondary),
+        2px 2px var(--secondary), -2px -2px var(--secondary),
+        2px -2px var(--secondary), -2px 2px var(--secondary);
+}
+
+@keyframes blink {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.4;
+    }
+}
+
+.blinking {
+    animation: blink 2s linear infinite;
 }
 
 @media screen and (max-width: 800px) {
-  main > img {
-    width: 400px;
-  }
+    main > img {
+        width: 400px;
+    }
 
-  section > h2 {
-    font-size: 24px;
-    text-shadow: 3px 0 var(--home), -3px 0 var(--home), 0 3px var(--home),
-      0 -3px var(--home), 3px 3px var(--home), -3px -3px var(--home),
-      3px -3px var(--home), -3px 3px var(--home);
-  }
+    h2 {
+        font-size: 24px;
+        text-shadow: 3px 0 var(--home), -3px 0 var(--home), 0 3px var(--home),
+            0 -3px var(--home), 3px 3px var(--home), -3px -3px var(--home),
+            3px -3px var(--home), -3px 3px var(--home);
+    }
 
-  section:hover h2 {
-    text-shadow: 3px 0 var(--primary), -3px 0 var(--primary),
-      0 3px var(--primary), 0 -3px var(--primary), 3px 3px var(--primary),
-      -3px -3px var(--primary), 3px -3px var(--primary), -3px 3px var(--primary);
-  }
+    section:hover h2 {
+        text-shadow: 3px 0 var(--primary), -3px 0 var(--primary),
+            0 3px var(--primary), 0 -3px var(--primary), 3px 3px var(--primary),
+            -3px -3px var(--primary), 3px -3px var(--primary),
+            -3px 3px var(--primary);
+    }
 
-  section > img {
-    width: 20px;
-  }
+    section > img {
+        width: 20px;
+    }
+
+    .modale {
+        padding: 36px;
+        gap: 20px;
+    }
+
+    h4 {
+        font-size: 28px;
+    }
+
+    input {
+        padding: 4px 16px;
+        font-size: 28px;
+    }
 }
 
 @media screen and (max-width: 500px) {
-  main > img {
-    width: 300px;
-  }
+    main > img {
+        width: 300px;
+    }
 
-  section > h2 {
-    font-size: 24px;
-  }
+    h2 {
+        font-size: 24px;
+    }
 
-  section > img {
-    width: 20px;
-  }
+    section > img {
+        width: 20px;
+    }
 }
 
 @media screen and (max-height: 600px) {
-  main {
-    gap: 12%;
-  }
-  main > img {
-    width: 300px;
-  }
+    main {
+        gap: 12%;
+    }
+    main > img {
+        width: 300px;
+    }
 
-  article {
-    gap: 12px;
-  }
+    article {
+        gap: 12px;
+    }
 
-  section > h2 {
-    font-size: 20px;
-  }
+    h2 {
+        font-size: 20px;
+    }
 
-  section > img {
-    width: 20px;
-  }
+    section > img {
+        width: 20px;
+    }
 }

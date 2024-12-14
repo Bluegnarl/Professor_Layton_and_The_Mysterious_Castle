@@ -1,102 +1,190 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/styles/default.css" />
-    <link
-      rel="icon"
-      type="image/png"
-      href="./assets/img/favicon-96x96.png"
-      sizes="96x96"
-    />
-    <link rel="icon" type="image/svg+xml" href="./assets/img/favicon.svg" />
-    <link rel="shortcut icon" href="./assets/img/favicon.ico" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="./assets/img/apple-touch-icon.png"
-    />
-    <meta name="apple-mobile-web-app-title" content="P. Layton" />
-    <link rel="manifest" href="./assets/img/site.webmanifest" />
-    <script type="module" src="./index.js" defer></script>
-    <title>Professeur Layton et l'Étrange Château</title>
-  </head>
-  <body>
-    <article class="primary-screen">
-      <section class="scene">
-        <img
-          class="inventory-icon"
-          src="./assets/img/inventory.png"
-          alt="inventory"
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./assets/styles/default.css" />
+        <link
+            rel="icon"
+            type="image/png"
+            href="./assets/img/favicon-96x96.png"
+            sizes="96x96"
         />
-        <img class="move-icon" src="./assets/img/move.png" alt="move" />
-        <img class="npc" src="./assets/img/girl.png" alt="girl" />
-        <div class="move-arrow-container">
-          <img
-            class="move-arrow"
-            src="./assets/img/arrow-up.png"
-            alt="arrow-up"
-          />
-        </div>
-      </section>
-      <section class="dialogue">
-        <div>
-          <img src="./assets/img/layton.png" alt="layton" />
-          <div>
-            <h3>Layton</h3>
-          </div>
-          <p>
-            Un miroir reflète, mais il peut aussi parfois compliquer un
-            problème.
-          </p>
-        </div>
-      </section>
-      <section class="inventory">
-        <div>
-          <header>
-            <div id="leave">
-              <img src="./assets/img/home.png" alt="" />
-              <h5>Quitter</h5>
-            </div>
-            <div id="close-inventory">
-              <img src="./assets/img/inventory.png" alt="" />
-              <h5>Fermer</h5>
-            </div>
-          </header>
-          <section>
-            <div>
-              <img src="./assets/img/notebook.png" alt="" />
-              <h4>Notes</h4>
-            </div>
-            <div>
-              <img src="./assets/img/book.png" alt="" />
-              <h4>Enigmes</h4>
-            </div>
-          </section>
-        </div>
-      </section>
-    </article>
-    <article class="logo-screen-wrapper">
-      <section class="logo-container">
-        <img src="./assets/img/logo.png" alt="professor-layton-logo" />
-      </section>
-      <section class="secondary-screen">
-        <header>
-          <div>
-            <h4>NO. 001</h4>
-            <h4>Le miroir</h4>
-          </div>
-        </header>
-        <section>
-          <p>
-            Un miroir reflète, mais il peut aussi parfois compliquer un
-            problème. Prenons par exemple ce casse-tête.
-          </p>
-        </section>
-        <h3>Entrée du château</h3>
-        <p>Allez parler au frère de Reinhold!</p>
-      </section>
-    </article>
-  </body>
+        <link rel="icon" type="image/svg+xml" href="./assets/img/favicon.svg" />
+        <link rel="shortcut icon" href="./assets/img/favicon.ico" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="./assets/img/apple-touch-icon.png"
+        />
+        <meta name="apple-mobile-web-app-title" content="P. Layton" />
+        <link rel="manifest" href="./assets/img/site.webmanifest" />
+        <script type="module" src="./index.js" defer></script>
+        <title>Professeur Layton et l'Étrange Château</title>
+    </head>
+    <body>
+        <article class="primary-screen">
+            <section class="scene">
+                <img
+                    class="inventory-icon"
+                    src="./assets/img/inventory.png"
+                    alt="inventory"
+                />
+                <img class="move-icon" src="./assets/img/move.png" alt="move" />
+                <img class="npc" src="./assets/img/girl.png" alt="girl" />
+                <div class="move-arrow-container">
+                    <img
+                        class="move-arrow"
+                        src="./assets/img/arrow-up.png"
+                        alt="arrow-up"
+                    />
+                </div>
+            </section>
+            <section class="dialogue">
+                <div>
+                    <img src="./assets/img/layton.png" alt="layton" />
+                    <div>
+                        <h3>Layton</h3>
+                    </div>
+                    <p>
+                        Un miroir reflète, mais il peut aussi parfois compliquer
+                        un problème.
+                    </p>
+                </div>
+            </section>
+            <section class="inventory">
+                <div>
+                    <header>
+                        <div id="leave">
+                            <img src="./assets/img/home.png" alt="leave" />
+                            <h5>Quitter</h5>
+                        </div>
+                        <div id="close-inventory">
+                            <img
+                                src="./assets/img/inventory.png"
+                                alt="close-inventory"
+                            />
+                            <h5>Fermer</h5>
+                        </div>
+                    </header>
+                    <section>
+                        <div id="notebook-icon">
+                            <img
+                                src="./assets/img/notebook.png"
+                                alt="notebook"
+                                draggable="false"
+                            />
+                            <h4>Notes</h4>
+                        </div>
+                        <div id="book-icon">
+                            <img
+                                src="./assets/img/book.png"
+                                alt="book"
+                                draggable="false"
+                            />
+                            <h4>Enigmes</h4>
+                        </div>
+                    </section>
+                </div>
+            </section>
+            <section class="notebook-and-book">
+                <div id="notebook">
+                    <header>
+                        <div>
+                            <h4>Notes</h4>
+                            <img
+                                class="back"
+                                src="./assets/img/back.png"
+                                alt="back"
+                            />
+                        </div>
+                    </header>
+                    <section>
+                        <p>
+                            Un miroir reflète, mais il peut aussi parfois
+                            compliquer un problème. Prenons par exemple ce
+                            casse-tête.
+                        </p>
+                    </section>
+                </div>
+                <div id="book">
+                    <header>
+                        <div>
+                            <h4>Livret des énigmes</h4>
+                            <img
+                                class="back"
+                                src="./assets/img/back.png"
+                                alt="back"
+                            />
+                        </div>
+                    </header>
+                    <section>
+                        <div>
+                          <div>
+                            <h4>001</h4>
+                          </div>
+                            <p>
+                                Un miroir reflète, mais il peut aussi parfois
+                                compliquer un problème. Prenons par exemple ce
+                                casse-tête.
+                            </p>
+                        </div>
+                        <div>
+                          <div>
+                            <h4>002</h4>
+                          </div>
+                            <p>
+                                ???
+                            </p>
+                        </div>
+                                                <div>
+                          <div>
+                            <h4>003</h4>
+                          </div>
+                            <p>
+                                ???
+                            </p>
+                        </div>
+                        <div>
+                          <div>
+                            <h4>004</h4>
+                          </div>
+                            <p>
+                                ???
+                            </p>
+                        </div>
+                                                <div>
+                          <div>
+                            <h4>005</h4>
+                          </div>
+                            <p>
+                                ???
+                            </p>
+                        </div>
+                    </section>
+                </div>
+            </section>
+        </article>
+        <article class="logo-screen-wrapper">
+            <section class="logo-container">
+                <img src="./assets/img/logo.png" alt="professor-layton-logo" />
+            </section>
+            <section class="secondary-screen">
+                <header>
+                    <div>
+                        <h4>NO. 001</h4>
+                        <h4>Le miroir</h4>
+                    </div>
+                </header>
+                <section>
+                    <p>
+                        Un miroir reflète, mais il peut aussi parfois compliquer
+                        un problème. Prenons par exemple ce casse-tête.
+                    </p>
+                </section>
+                <h3>Entrée du château</h3>
+                <p>Allez parler au frère de Reinhold!</p>
+            </section>
+        </article>
+    </body>
 </html>

@@ -1,47 +1,73 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../assets/styles/home.css" />
-    <link
-      rel="icon"
-      type="image/png"
-      href="../assets/img/favicon-96x96.png"
-      sizes="96x96"
-    />
-    <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg" />
-    <link rel="shortcut icon" href="../assets/img/favicon.ico" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="../assets/img/apple-touch-icon.png"
-    />
-    <meta name="apple-mobile-web-app-title" content="P. Layton" />
-    <link rel="manifest" href="../assets/img/site.webmanifest" />
-    <script type="module" src="../utils/home.js" defer></script>
-    <title>Professeur Layton et l'Étrange Château</title>
-  </head>
-  <body>
-    <div class="parallax-container">
-        <div class="parallax" draggable="false"></div>
-    </div>
-    <main>
-        <img src="../assets/img/logo.png" alt="Logo Professeur Layton">
-        <article>
-            <section id="new-game">
-                <img src="../assets/img/new-game.png" alt="Nouvelle Partie">
-                <h2>Nouvelle Partie</h2>
-            </section>
-             <section id="continue">
-                <img src="../assets/img/continue.png" alt="Continuer">
-                <h2>Continuer</h2>
-            </section>
-             <section id="infos">
-                <img src="../assets/img/infos.png" alt="Informations">
-                <h2>Informations</h2>
-            </section>
-        </article>
-    </main>
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../assets/styles/home.css" />
+        <link
+            rel="icon"
+            type="image/png"
+            href="../assets/img/favicon-96x96.png"
+            sizes="96x96"
+        />
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="../assets/img/favicon.svg"
+        />
+        <link rel="shortcut icon" href="../assets/img/favicon.ico" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="../assets/img/apple-touch-icon.png"
+        />
+        <meta name="apple-mobile-web-app-title" content="P. Layton" />
+        <link rel="manifest" href="../assets/img/site.webmanifest" />
+        <script type="module" src="../utils/home.js" defer></script>
+        <title>Professeur Layton et l'Étrange Château</title>
+    </head>
+    <body>
+        <div class="parallax-container">
+            <div class="parallax" draggable="false"></div>
+        </div>
+        <img id="mute" src="../assets/img/muted.png" alt="muted" />
+        <main>
+            <img src="../assets/img/logo.png" alt="Logo Professeur Layton" />
+            <article>
+                <h2 id="start-game" class="blinking">Touchez pour commencer</h2>
+                <section class="main-menu-buttons" id="new-game">
+                    <img
+                        src="../assets/img/new-game.png"
+                        alt="Nouvelle Partie"
+                    />
+                    <h2>Nouvelle Partie</h2>
+                </section>
+                <section class="main-menu-buttons" id="continue">
+                    <img src="../assets/img/continue.png" alt="Continuer" />
+                    <h2>Continuer</h2>
+                </section>
+                <section class="main-menu-buttons" id="infos">
+                    <img src="../assets/img/infos.png" alt="Informations" />
+                    <h2>Informations</h2>
+                </section>
+            </article>
+        </main>
+
+        <div id="modale-background"></div>
+        <div class="modale" id="modale-new-game">
+            <h4>Entrez votre nom.</h4>
+            <div>
+                <div>
+                    <input id="name" type="text" placeholder="Luc" />
+                </div>
+            </div>
+            <button id="submit">
+                <h4>OK</h4>
+            </button>
+        </div>
+        <div class="modale" id="modale-infos">
+            <img src="../assets/img/layton-icon.png" alt="layton">
+            <h4></h4>
+        </div>
+    </body>
 </html>
