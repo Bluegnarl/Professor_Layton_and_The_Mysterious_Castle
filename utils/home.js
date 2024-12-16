@@ -75,7 +75,7 @@ document.getElementById("continue").addEventListener("click", () => {
     if (localStorage.getItem("name")) {
         setTimeout(() => {
             sessionStorage.setItem("firstLaunch", false);
-            location.href = "../index.html";
+            location.href = "../";
         }, 500);
     } else {
         modaleBackground.style.opacity = "1";
@@ -126,10 +126,12 @@ document.getElementById("submit").addEventListener("click", () => {
     let name = document.getElementById("name").value
         ? document.getElementById("name").value
         : "Luc";
+    localStorage.clear();
     localStorage.setItem("name", name);
+    localStorage.setItem("currentScene", 0)
     sessionStorage.setItem("firstLaunch", false);
     setTimeout(() => {
-        location.href = "../index.html";
+        location.href = "../";
     }, 500);
 });
 

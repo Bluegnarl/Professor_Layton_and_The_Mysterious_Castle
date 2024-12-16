@@ -29,6 +29,10 @@
     --surface-2: radial-gradient(#e4c2a0, #a07850);
     --surface-3: radial-gradient(#ab7537 14%, #42280b 80%, #31200c 100%);
 
-    --linear-pink: linear-gradient(90deg, #e34ca7, #e48ab6);
+    --linear-blue: linear-gradient(90deg, #5696be, #4ccde3);
     --linear-green: linear-gradient(90deg, #bbe34c, #a2be56);
+    --linear-pink: linear-gradient(90deg, #e34ca7, #e48ab6);
+    --linear-brown: linear-gradient(90deg, #bf8e34, #d7aa57);
+    --linear-purple: linear-gradient(90deg, #7128ca, #af6dff);
+    --linear-red: linear-gradient(90deg, #ca2828, #ff6d6d);
 }

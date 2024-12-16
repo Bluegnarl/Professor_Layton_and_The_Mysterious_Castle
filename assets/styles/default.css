@@ -25,7 +25,7 @@ body {
   height: 100%;
   aspect-ratio: 4/3;
   position: relative;
-  background: url("../img/05-forest.png") center/cover no-repeat;
+  background: url("../img/01-forest.png") center/cover no-repeat;
   border: solid 3px var(--primary);
   cursor: url("../img/cursor-hand.png"), auto;
 }
@@ -33,6 +33,108 @@ body {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+}
+.primary-screen p {
+  color: var(--on-surface);
+  font-family: "Free Pixel", sans-serif;
+  font-size: 40px;
+}
+.primary-screen #puzzle {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+}
+.primary-screen #puzzle #back-puzzle {
+  position: absolute;
+  width: 10%;
+  top: 3%;
+  right: 3%;
+}
+.primary-screen section .videos {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  z-index: 100;
+}
+.primary-screen section #clickToStart {
+  background-color: rgba(0, 0, 0, 0.3725490196);
+  z-index: 500;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--on-surface-variant);
+}
+.primary-screen section #text {
+  width: 90%;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--surface-1);
+  border: solid 2px var(--primary);
+  border-radius: 4px;
+  z-index: 70;
+}
+.primary-screen section #ending {
+  width: 90%;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5%;
+  gap: 12px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--surface-1);
+  border: solid 2px var(--primary);
+  border-radius: 4px;
+  z-index: 500;
+}
+.primary-screen section #ending img {
+  width: 15%;
+}
+.primary-screen section #ending p {
+  text-align: center;
+  width: 100%;
+}
+.primary-screen section #achievement {
+  width: 90%;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5%;
+  gap: 12px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--surface-1);
+  border: solid 2px var(--primary);
+  border-radius: 4px;
+  z-index: 50;
+}
+.primary-screen section #achievement img {
+  width: 15%;
+}
+.primary-screen section #achievement p {
+  text-align: center;
+  width: 100%;
 }
 .primary-screen section .inventory-icon {
   width: 8%;
@@ -57,14 +159,14 @@ body {
   -o-user-drag: none;
 }
 .primary-screen section .npc {
-  width: 15%;
   position: absolute;
-  left: 55%;
-  bottom: 14%;
   -webkit-user-drag: none;
   -moz-user-drag: none;
   -o-user-drag: none;
   transition: filter 0.5s ease;
+}
+.primary-screen section .interaction {
+  position: absolute;
 }
 .primary-screen section .move-arrow-container {
   display: none;
@@ -104,9 +206,9 @@ body {
 .primary-screen .dialogue > div img {
   position: absolute;
   width: 30%;
-  left: 2%;
   bottom: 75%;
   z-index: 0;
+  margin: 0 5%;
 }
 .primary-screen .dialogue > div > div {
   margin: 0 24px 0 24px;
@@ -131,13 +233,17 @@ body {
   width: 100%;
   height: 200px;
   padding: 24px 36px;
-  color: var(--on-surface);
   border: solid 2px var(--primary);
   border-radius: 32px;
-  font-family: "Free Pixel", sans-serif;
-  font-size: 40px;
   background: var(--surface-1);
   z-index: 50;
+  animation: typing 0.5s;
+  overflow: hidden;
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
 }
 .primary-screen .inventory {
   display: none;
@@ -222,6 +328,7 @@ body {
   display: none;
   flex-direction: column;
   height: 100%;
+  width: 100%;
 }
 .primary-screen .notebook-and-book > div header {
   display: flex;
@@ -308,6 +415,32 @@ body {
     opacity: 0.4;
   }
 }
+@keyframes fadeToBlack {
+  0% {
+    filter: brightness(1);
+  }
+  100% {
+    filter: brightness(0.1);
+  }
+}
+@keyframes fadeToBlackReverse {
+  0% {
+    filter: brightness(0.1);
+  }
+  100% {
+    filter: brightness(1);
+  }
+}
+@keyframes blurIn {
+  0% {
+    filter: blur(4px);
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  100% {
+    filter: blur(0);
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
 .blinking {
   animation: blink 1s linear infinite;
 }
@@ -351,6 +484,7 @@ body {
 .secondary-screen.puzzle section {
   padding: 16px 20px;
   display: block;
+  overflow-y: auto;
 }
 .secondary-screen.puzzle section p {
   font-family: "Free Pixel", sans-serif;
@@ -428,6 +562,9 @@ body {
   body {
     align-items: flex-end;
   }
+  .primary-screen p {
+    font-size: 24px;
+  }
   .primary-screen .dialogue > div {
     gap: 2px;
   }
@@ -438,7 +575,6 @@ body {
     border-radius: 16px;
     height: 135px;
     padding: 16px 28px;
-    font-size: 24px;
   }
   .primary-screen .inventory {
     padding: 8px;
@@ -517,6 +653,9 @@ body {
   .primary-screen {
     height: 50%;
   }
+  .primary-screen p {
+    font-size: 28px;
+  }
   .primary-screen .dialogue > div {
     gap: 2px;
   }
@@ -529,7 +668,6 @@ body {
   .primary-screen .dialogue > div p {
     height: 135px;
     padding: 16px 28px;
-    font-size: 28px;
   }
   .primary-screen .inventory > div section div {
     gap: 16px;
@@ -588,6 +726,9 @@ body {
   }
 }
 @media screen and (max-width: 1500px) and (max-height: 800px) {
+  .primary-screen p {
+    font-size: 16px;
+  }
   .primary-screen .dialogue > div {
     gap: 2px;
   }
@@ -601,7 +742,6 @@ body {
   .primary-screen .dialogue > div p {
     height: 85px;
     padding: 12px 16px;
-    font-size: 16px;
     border-radius: 16px;
   }
   .primary-screen .inventory {
@@ -670,6 +810,9 @@ body {
   .primary-screen {
     height: 100%;
   }
+  .primary-screen p {
+    font-size: 15px;
+  }
   .primary-screen .dialogue > div {
     gap: 2px;
   }
@@ -682,7 +825,6 @@ body {
   .primary-screen .dialogue > div p {
     height: 80px;
     padding: 8px 16px;
-    font-size: 15px;
   }
   .primary-screen .inventory {
     padding: 8px;

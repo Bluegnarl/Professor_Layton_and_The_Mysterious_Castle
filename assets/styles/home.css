@@ -29,7 +29,7 @@ main {
 }
 
 main > img {
-    width: 500px;
+    width: 650px;
     height: fit-content;
     filter: drop-shadow(0 0 4px #23140c);
 }
@@ -225,9 +225,9 @@ button h4 {
     animation: blink 2s linear infinite;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
     main > img {
-        width: 400px;
+        width: 450px;
     }
 
     h2 {
@@ -277,7 +277,7 @@ button h4 {
     }
 }
 
-@media screen and (max-height: 600px) {
+@media screen and (max-height: 700px) {
     main {
         gap: 12%;
     }

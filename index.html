@@ -24,32 +24,37 @@
     </head>
     <body>
         <article class="primary-screen">
-            <section class="scene">
+            <section id="scene">
+                <p id="clickToStart" class="blinking">Cliquez pour commencer</p>
+                <p id="text"></p>
+                <div id="ending">
+                    <img src="./assets/img/player-icon.png" alt="" />
+                    <p></p>
+                    <p>La porte semble être ouverte.</p>
+                </div>
+                <div id="achievement">
+                    <img src="./assets/img/player-icon.png" alt="" />
+                    <p>La porte semble être ouverte.</p>
+                </div>
                 <img
                     class="inventory-icon"
                     src="./assets/img/inventory.png"
                     alt="inventory"
                 />
                 <img class="move-icon" src="./assets/img/move.png" alt="move" />
-                <img class="npc" src="./assets/img/girl.png" alt="girl" />
-                <div class="move-arrow-container">
-                    <img
-                        class="move-arrow"
-                        src="./assets/img/arrow-up.png"
-                        alt="arrow-up"
-                    />
-                </div>
+                <div class="move-arrow-container"></div>
+            </section>
+            <section id="puzzle">
+                <img src="" alt="">
+                <img id="back-puzzle" src="./assets/img/back.png" alt="back" />
             </section>
             <section class="dialogue">
                 <div>
                     <img src="./assets/img/layton.png" alt="layton" />
                     <div>
-                        <h3>Layton</h3>
+                        <h3></h3>
                     </div>
-                    <p>
-                        Un miroir reflète, mais il peut aussi parfois compliquer
-                        un problème.
-                    </p>
+                    <p></p>
                 </div>
             </section>
             <section class="inventory">
@@ -100,11 +105,7 @@
                         </div>
                     </header>
                     <section>
-                        <p>
-                            Un miroir reflète, mais il peut aussi parfois
-                            compliquer un problème. Prenons par exemple ce
-                            casse-tête.
-                        </p>
+                        <p id="notes"></p>
                     </section>
                 </div>
                 <div id="book">
@@ -118,50 +119,7 @@
                             />
                         </div>
                     </header>
-                    <section>
-                        <div>
-                          <div>
-                            <h4>001</h4>
-                          </div>
-                            <p>
-                                Un miroir reflète, mais il peut aussi parfois
-                                compliquer un problème. Prenons par exemple ce
-                                casse-tête.
-                            </p>
-                        </div>
-                        <div>
-                          <div>
-                            <h4>002</h4>
-                          </div>
-                            <p>
-                                ???
-                            </p>
-                        </div>
-                                                <div>
-                          <div>
-                            <h4>003</h4>
-                          </div>
-                            <p>
-                                ???
-                            </p>
-                        </div>
-                        <div>
-                          <div>
-                            <h4>004</h4>
-                          </div>
-                            <p>
-                                ???
-                            </p>
-                        </div>
-                                                <div>
-                          <div>
-                            <h4>005</h4>
-                          </div>
-                            <p>
-                                ???
-                            </p>
-                        </div>
-                    </section>
+                    <section id="puzzles-list"></section>
                 </div>
             </section>
         </article>
@@ -172,18 +130,18 @@
             <section class="secondary-screen">
                 <header>
                     <div>
-                        <h4>NO. 001</h4>
-                        <h4>Le miroir</h4>
+                        <h4 id="puzzle-number">NO. 001</h4>
+                        <h4 id="puzzle-name">Le miroir</h4>
                     </div>
                 </header>
                 <section>
-                    <p>
+                    <p id="puzzle-description">
                         Un miroir reflète, mais il peut aussi parfois compliquer
                         un problème. Prenons par exemple ce casse-tête.
                     </p>
                 </section>
-                <h3>Entrée du château</h3>
-                <p>Allez parler au frère de Reinhold!</p>
+                <h3 id="place"></h3>
+                <p id="goal"></p>
             </section>
         </article>
     </body>
